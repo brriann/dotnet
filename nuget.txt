@@ -1,0 +1,5 @@
+Nuget Npm Nuget Package Manager
+
+Package Manager Console
+
+Install-Package Microsoft.EntityFrameworkCore.InMemory
