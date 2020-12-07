@@ -22,7 +22,7 @@ namespace CodeFirstNewDatabaseSample
 {
    class Program
    {
-      const string connStringLocalDev = "Server=DESKTOP-I4R8UR2;Database=seed1;User Id=bfosa;Password=bfosa;";
+      const string connStringLocalDev = "Server=DESKTOP-I4R8UR2;Database=seed1;User Id=bfosa;Password=bfosa;Trusted_Connection=True;";
 
       static void Main(string[] args)
       {
@@ -36,12 +36,12 @@ namespace CodeFirstNewDatabaseSample
             db.Blogs.Add(blog);
             db.SaveChanges();
 
-            // Display all Blogs from the database
-            var query = from b in db.Blogs
-                        orderby b.Name
-                        select b;
+            //// Display all Blogs from the database
+            //var query = from b in db.Blogs
+            //            orderby b.Name
+            //            select b;
 
-            //var query2 = db.Blogs.OrderBy(b => b.Name);
+            var query = db.Blogs.OrderBy(b => b.Name);
 
             Console.WriteLine("All blogs in the database:");
             foreach (var item in query)
@@ -79,6 +79,7 @@ namespace CodeFirstNewDatabaseSample
       // https://stackoverflow.com/questions/38878140/how-can-i-implement-dbcontext-connection-string-in-net-core
       public BloggingContext(string connectionString) : base(GetOptions(connectionString))
       {
+         this.Database.EnsureCreated();
       }
 
       private static DbContextOptions GetOptions(string connectionString)
