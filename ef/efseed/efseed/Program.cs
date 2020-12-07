@@ -16,7 +16,17 @@ using Microsoft.EntityFrameworkCore;
 // EF 6 vs EF Core
 //
 // https://docs.microsoft.com/en-us/ef/efcore-and-ef6/
-
+// https://docs.microsoft.com/en-us/ef/core/
+//
+// EF CORE MIGRATIONS
+// https://docs.microsoft.com/en-us/ef/core/managing-schemas/ensure-created
+// 
+// DOTNET-EF CLI TOOLS TO CREATE MIGRATIONS
+// https://docs.microsoft.com/en-us/ef/core/cli/dotnet
+//
+//
+// Configure SQL Server conn string
+// https://stackoverflow.com/questions/38878140/how-can-i-implement-dbcontext-connection-string-in-net-core
 
 namespace CodeFirstNewDatabaseSample
 {
@@ -26,6 +36,9 @@ namespace CodeFirstNewDatabaseSample
       {
          using (var db = new BloggingContext())
          {
+            var sql = db.Database.GenerateCreateScript();
+            Console.WriteLine(sql);
+
             // Create and save a new Blog
             Console.Write("Enter a name for a new Blog: ");
             var name = Console.ReadLine();
@@ -33,11 +46,6 @@ namespace CodeFirstNewDatabaseSample
             var blog = new Blog { Name = name };
             db.Blogs.Add(blog);
             db.SaveChanges();
-
-            //// Display all Blogs from the database
-            //var query = from b in db.Blogs
-            //            orderby b.Name
-            //            select b;
 
             var query = db.Blogs.OrderBy(b => b.Name);
 
@@ -73,14 +81,12 @@ namespace CodeFirstNewDatabaseSample
 
    public class BloggingContext : DbContext
    {
-      // Configure SQL Server conn string
-      // https://stackoverflow.com/questions/38878140/how-can-i-implement-dbcontext-connection-string-in-net-core
-
       const string connStringLocalDev = "Server=DESKTOP-I4R8UR2;Database=seed1;User Id=bfosa;Password=bfosa;Trusted_Connection=True;";
 
       public BloggingContext()
       {
-         this.Database.EnsureCreated();
+         // OK for initial dev. don't use for Migrations.
+         // this.Database.EnsureCreated();
       }
 
       public DbSet<Blog> Blogs { get; set; }
