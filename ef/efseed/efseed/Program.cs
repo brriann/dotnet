@@ -22,11 +22,9 @@ namespace CodeFirstNewDatabaseSample
 {
    class Program
    {
-      const string connStringLocalDev = "Server=DESKTOP-I4R8UR2;Database=seed1;User Id=bfosa;Password=bfosa;Trusted_Connection=True;";
-
       static void Main(string[] args)
       {
-         using (var db = new BloggingContext(connStringLocalDev))
+         using (var db = new BloggingContext())
          {
             // Create and save a new Blog
             Console.Write("Enter a name for a new Blog: ");
@@ -77,17 +75,20 @@ namespace CodeFirstNewDatabaseSample
    {
       // Configure SQL Server conn string
       // https://stackoverflow.com/questions/38878140/how-can-i-implement-dbcontext-connection-string-in-net-core
-      public BloggingContext(string connectionString) : base(GetOptions(connectionString))
+
+      const string connStringLocalDev = "Server=DESKTOP-I4R8UR2;Database=seed1;User Id=bfosa;Password=bfosa;Trusted_Connection=True;";
+
+      public BloggingContext()
       {
          this.Database.EnsureCreated();
       }
 
-      private static DbContextOptions GetOptions(string connectionString)
-      {
-         return SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder(), connectionString).Options;
-      }
-
       public DbSet<Blog> Blogs { get; set; }
       public DbSet<Post> Posts { get; set; }
+
+      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      {
+         optionsBuilder.UseSqlServer(connStringLocalDev);
+      }
    }
 }
