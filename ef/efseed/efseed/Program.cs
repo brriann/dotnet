@@ -98,3 +98,6 @@ namespace CodeFirstNewDatabaseSample
       }
    }
 }
+
+// Powershell, in-line with .csproj file
+// dotnet ef migrations add InitialCreate
