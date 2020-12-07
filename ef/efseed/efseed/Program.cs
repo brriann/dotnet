@@ -24,6 +24,11 @@ using Microsoft.EntityFrameworkCore;
 // DOTNET-EF CLI TOOLS TO CREATE MIGRATIONS
 // https://docs.microsoft.com/en-us/ef/core/cli/dotnet
 //
+// Powershell, in-line with .csproj file
+// dotnet ef migrations add InitialCreate
+// dotnet ef database update
+//
+// https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying?tabs=dotnet-core-cli
 //
 // Configure SQL Server conn string
 // https://stackoverflow.com/questions/38878140/how-can-i-implement-dbcontext-connection-string-in-net-core
@@ -98,6 +103,3 @@ namespace CodeFirstNewDatabaseSample
       }
    }
 }
-
-// Powershell, in-line with .csproj file
-// dotnet ef migrations add InitialCreate
