@@ -17,5 +17,11 @@ namespace mvc1.Models
       [Required]
       [Range(1,int.MaxValue,ErrorMessage ="Skier Number must be greater than 0")]
       public int SkierNumber { get; set; }
+      public bool IsSlalom { get; set; }
+      public bool IsTrick { get; set; }
+      [DisplayName("Salary Cap")]
+      public int SalaryCap { get; set; }
+      [DisplayName("Betting Line")]
+      public double BettingLine { get; set; }
    }
 }
