@@ -8,7 +8,7 @@
       </div>
       <div class="col-6">
          <a asp-controller="Skier" asp-action="Create" class="btn btn-primary">
-            Create New Skier
+            <i class="fas fa-plus"></i> New Skier
          </a>
       </div>
    </div>
@@ -32,7 +32,16 @@
             <tr>
                <td width="50%">@skier.Name</td>
                <td width="30%">@skier.SkierNumber</td>
-               <td></td>
+               <td class="text-center">
+                  <div class="w-75 btn-group" role="group">
+                     <a asp-controller="Skier" asp-route-Id="@skier.Id" asp-action="Edit" class="btn btn-primary mx-2">
+                        <i class="fas fa-edit"></i>
+                     </a>
+                     <a asp-controller="Skier" asp-route-Id="@skier.Id" asp-action="Delete" class="btn btn-danger mx-2">
+                        <i class="far fa-trash-alt"></i>
+                     </a>
+                  </div>
+               </td>
             </tr>
             }
          </tbody>
