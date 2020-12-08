@@ -33,6 +33,6 @@ namespace mvc1.Models
       public double BettingLine { get; set; }
       [NotMapped]
       public DateTime LoadedFromDatabase { get; set; }
-      
+      public DateTime Birthday { get; set; }
    }
 }
