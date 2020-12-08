@@ -1,0 +1,47 @@
+﻿@model IEnumerable<mvc1.Models.Skier>
+
+
+<div class="container p-3">
+   <div class="row pt-4">
+      <div class="col-6">
+         <h2>Skier List</h2>
+      </div>
+      <div class="col-6">
+         <a asp-controller="Skier" asp-action="Create" class="btn btn-primary">
+            Create New Skier
+         </a>
+      </div>
+   </div>
+   <br />
+   @if (Model.Count() > 0)
+   {
+      <table class="table table-bordered table-striped" style="width:100%">
+         <thead>
+            <tr>
+               <th>
+                  Skier Name
+               </th>
+               <th>
+                  Skier Number (not id)
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach(var skier in Model)
+            {
+            <tr>
+               <td width="50%">@skier.Name</td>
+               <td width="30%">@skier.SkierNumber</td>
+               <td></td>
+            </tr>
+            }
+         </tbody>
+      </table> 
+   }
+   else
+   {
+      <p>no skiers found.</p>
+   }
+</div>
+
+
