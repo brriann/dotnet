@@ -13,7 +13,7 @@ namespace mvc1.Models
       [Key]
       public int Id { get; set; }
       [Required]
-
+      [Column(TypeName ="nvarchar(20)")]
       public string Name { get; set; }
       [DisplayName("Skier #")]
       [Required]
