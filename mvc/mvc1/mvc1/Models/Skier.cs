@@ -11,8 +11,11 @@ namespace mvc1.Models
    {
       [Key]
       public int Id { get; set; }
+      [Required]
       public string Name { get; set; }
       [DisplayName("Skier #")]
+      [Required]
+      [Range(1,int.MaxValue,ErrorMessage ="Skier Number must be greater than 0")]
       public int SkierNumber { get; set; }
    }
 }
