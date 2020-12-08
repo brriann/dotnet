@@ -13,7 +13,11 @@ namespace mvc1.Data
       {
 
       }
+      
+      // add-migration AddEntityToDatabase
+      // update-database
 
       public DbSet<Skier> Skier { get; set; }
+      public DbSet<Tourney> Tourney { get; set; }
    }
 }

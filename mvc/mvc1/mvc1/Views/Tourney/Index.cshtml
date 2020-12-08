@@ -1,0 +1,47 @@
+﻿@model IEnumerable<mvc1.Models.Tourney>
+
+
+<div class="container p-3">
+   <div class="row pt-4">
+      <div class="col-6">
+         <h2>Tourney List</h2>
+      </div>
+      <div class="col-6">
+         <a asp-controller="Tourney" asp-action="Create" class="btn btn-primary">
+            Create New Tourney
+         </a>
+      </div>
+   </div>
+   <br />
+   @if (Model.Count() > 0)
+   {
+      <table class="table table-bordered table-striped" style="width:100%">
+         <thead>
+            <tr>
+               <th>
+                  Tourney Name
+               </th>
+               <th>
+                  Tourney Number (not id)
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach(var tourney in Model)
+            {
+            <tr>
+               <td width="50%">@tourney.Name</td>
+               <td width="30%">@tourney.TourneyNumber</td>
+               <td></td>
+            </tr>
+            }
+         </tbody>
+      </table> 
+   }
+   else
+   {
+      <p>no tourneys found.</p>
+   }
+</div>
+
+
