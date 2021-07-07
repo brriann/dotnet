@@ -73,10 +73,10 @@ namespace ExploreCalifornia
         {
             var roomName = $"Chat with {visitorName} from the web";
 
-            var roomId = await _chatRoomService.GetRoomForConnectionId(
-                Context.ConnectionId);
+         var roomId = await _chatRoomService.GetRoomForConnectionId(
+             Context.ConnectionId);
 
-            await _chatRoomService.SetRoomName(roomId, roomName);
+         await _chatRoomService.SetRoomName(roomId, roomName);
 
             await _agentHub.Clients.All
                 .SendAsync(
