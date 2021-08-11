@@ -1,0 +1,19 @@
+ASYNCHRONOUS PATTERNS NOTES
+
+https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/
+
+Delegate, Begin/End Invoke
+https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously
+
+
+DELEGATES - call "any" method asynchronously
+BeginInvoke
+EndInvoke
+AsyncCallback
+AsyncWaitHandle
+
+LAMBDAS - can behave like delegates, syntactic sugar
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions
+https://docs.microsoft.com/en-us/dotnet/standard/delegates-lambdas
+
+
