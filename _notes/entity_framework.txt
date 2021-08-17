@@ -1,0 +1,5 @@
+https://docs.microsoft.com/en-us/ef/core/
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli
+https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx
+https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
+
