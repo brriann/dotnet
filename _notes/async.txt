@@ -6,7 +6,9 @@ Delegate, Begin/End Invoke
 https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously
 
 
-DELEGATES - call "any" method asynchronously
+DELEGATES
+ - call "any" method asynchronously
+
 BeginInvoke
 EndInvoke
 AsyncCallback
@@ -25,3 +27,10 @@ https://docs.microsoft.com/en-us/dotnet/api/system.threading.manualresetevent?vi
 
 https://docs.microsoft.com/en-us/dotnet/standard/threading/
 https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives
+
+
+TASKS
+
+https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap
+https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-5.0
+https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.continuewith?view=net-5.0
