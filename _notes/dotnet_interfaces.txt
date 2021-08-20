@@ -1,0 +1,15 @@
+IDisposable
+using = try finally
+using (asdf)
+{
+
+}
+try
+{
+    asdf = ....
+}
+finally
+{
+    asdf.dispose()
+}
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement
