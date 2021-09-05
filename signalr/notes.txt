@@ -1,0 +1,4 @@
+https://docs.microsoft.com/en-us/aspnet/core/signalr/hubs?view=aspnetcore-5.0
+
+https://medium.com/swlh/creating-a-simple-real-time-chat-with-net-core-reactjs-and-signalr-6367dcadd2c6
+
