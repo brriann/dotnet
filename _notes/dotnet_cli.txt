@@ -1,2 +1,8 @@
+dotnet
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet
 
+dotnet ef
+https://docs.microsoft.com/en-us/ef/core/cli/dotnet
+
+func
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local
