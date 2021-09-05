@@ -6,3 +6,8 @@ https://docs.microsoft.com/en-us/ef/core/cli/dotnet
 
 func
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local
+
+choco
+https://docs.chocolatey.org/en-us/choco/commands/
+
+curl
